@@ -13,14 +13,6 @@ class futbolista(Deportista,Persona):
         
         futbolista.listaFutbolistas.append(self)
 
-    @classmethod
-    def setListaFutbolista(clc, listaFutbolistas):
-        clc.listaFutbolistas = listaFutbolistas
-    
-    @classmethod
-    def getListaFutbolista(clc):
-        return clc.listadoJugadores
-
     def getGolesMarcados(self):
         return self._golesMarcados
     def setGolesMarcados(self,x):
@@ -35,6 +27,14 @@ class futbolista(Deportista,Persona):
         return self._piernaHabil
     def setPiernaHabil(self,x):
         self._piernaHabil = x
+
+    @classmethod
+    def setListaFutbolista(clc, listaFutbolistas):
+        clc.listaFutbolistas = listaFutbolistas
+    
+    @classmethod
+    def getListaFutbolista(clc):
+        return clc.listadoJugadores
 
     def __str__(self):
         return f"Mi nombre es {self.getNombre()} soy profesional en el deporte {self.getDeporte()} Tengo {self.getEdad()} años de edad y llevo {self.getAñosPracticando()} años en el deporte"
